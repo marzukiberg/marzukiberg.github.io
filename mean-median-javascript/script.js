@@ -54,7 +54,7 @@ const calc = () => {
        <br />
        <strong>Penyelesaian: ${arrLength % 2 === 1 ? arrLengthNew +' / 2 (urutan ke-' +(medianIndex +1)+') = '+median : '('+firstIndex+'+'+secondIndex+') / 2'}</strong>
        <br />
-       <span>dik. Jumah data adalah
+       <span>Diketahui Jumah data adalah
          ${arrLength % 2 === 1? 'Ganjil, kita perlu mengurutkan data terlebih dahulu, kemudian kita ambil angka pada posisi tengah, pada data angka tengah terdapat pada urutan ke <strong>'+(medianIndex+1)+'</strong>': 'Genap, kita perlu mengurutkan data terlebih dahulu, kemudian kita ambil dua angka bagian kiri dan kanan pada posisi tengah, jumlahkan dua angka tersebut kemudian bagikan dengan 2'}
        </span>
       </div>

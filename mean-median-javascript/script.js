@@ -48,7 +48,7 @@ const calc = () => {
        <br />
        <span>Mean: ${mean.toFixed(2)}</span>
         <br />
-       <strong>Penyelesaian: ${'(' +initialResult.join('+')} / ${arrLength}</strong>
+       <strong>Penyelesaian: ${'(' +initialResult.join('+')+')'} / ${arrLength}</strong>
        <br />
        <span>Menghitung Mean/Nilai rata-rata dapat dilakukan dengan menjumlahkan semua angka kemudian dibagi dengan berapa banyak angka yang ada.
        <br />

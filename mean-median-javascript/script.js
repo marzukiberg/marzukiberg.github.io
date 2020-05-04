@@ -47,7 +47,7 @@ const calc = () => {
        <br />
        <span>Mean: ${mean.toFixed(2)}</span>
         <br />
-       <strong>Penyelesaian: ${total} / ${arrLength}</strong>
+       <strong>Penyelesaian: ${initialResult.join('+')+' = ' +total} / ${arrLength}</strong>
        <br />
        <br />
        <span>Median: ${median}</span>

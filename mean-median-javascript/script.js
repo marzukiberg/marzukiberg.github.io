@@ -39,6 +39,7 @@ const calc = () => {
     result.innerHTML = ''
   } else {
     result.innerHTML = `
+      <label id='addMore' class='btn btn-primary btn-sm btn-block' for='input'>Tambah Angka Lagi</label>
       <div class='alert alert-warning text-left'>
        <span>Angka setelah diurutkan:<br /> ${urut.join(', ')}</span>
        <br />
@@ -47,7 +48,9 @@ const calc = () => {
        <br />
        <span>Mean: ${mean.toFixed(2)}</span>
         <br />
-       <strong>Penyelesaian: ${initialResult.join('+')+' = ' +total} / ${arrLength}</strong>
+       <strong>Penyelesaian: ${'(' +initialResult.join('+')} / ${arrLength}</strong>
+       <br />
+       <span>Menghitung Mean/Nilai rata-rata dapat dilakukan dengan menjumlahkan semua angka kemudian dibagi dengan berapa banyak angka yang ada.
        <br />
        <br />
        <span>Median: ${median}</span>
@@ -82,6 +85,7 @@ add.addEventListener('click', () => {
   } else {
     initialResult.push(parseInt(input.value))
     input.value = ''
+    window.location.href = '#result'
     display()
   }
 })

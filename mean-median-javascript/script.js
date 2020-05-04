@@ -3,9 +3,9 @@ const result = document.getElementById('result')
 
 const input = document.getElementById('input')
 const add = document.getElementById('add')
-const reset = document.getElementById('reset')
+const resetAll = document.getElementById('resetAll')
 
-const initialResult = []
+let initialResult = []
 
 const calc = () => {
   let total = 0
@@ -84,6 +84,12 @@ add.addEventListener('click', () => {
     input.value = ''
     display()
   }
+})
+
+resetAll.addEventListener('click', () => {
+  initialResult = []
+  result.innerHTML = ''
+  display()
 })
 
 display()

@@ -40,7 +40,7 @@ const calc = () => {
   } else {
     result.innerHTML = `
       <div class='alert alert-warning text-left'>
-       <span>Angka setelah diurutkan: ${urut.join(', ')}</span>
+       <span>Angka setelah diurutkan:<br /> ${urut.join(', ')}</span>
        <br />
        <span>Jumlah index: ${arrLength}</span>
        <br />

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hilih Generator</title>
+  <link defer href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container text-center">
+    <h5>Hilih Generator</h5>
+    <input type="text" name="" id="halah" placeholder="Masukkan kalimat yang akan di generate" class="form-control" />
+    <br />
+    <div class="row">
+      <div class="col-8">
+        <input type="text" class="form-control" id="result" readonly />
+      </div>
+      <div class="col-4">
+        <button class="btn btn-primary btn-block" id="copy">Copy</button>
+      </div>
+    </div>
+  </div>
+  <!-- Javascript -->
+  <script type="text/javascript" charset="utf-8">
+    document.getElementById('halah').addEventListener('keyup', () => generate())
+    document.getElementById('copy').addEventListener('click', () => copyToClipboard())
+
+    const generate = () => {
+      const halah = document.getElementById('halah').value;
+      const result = document.getElementById('result');
+
+      if (halah === '') {
+        result.value = ''
+      } else {
+        const halahSplit = halah.split('');
+        let hilih = "";
+
+        halahSplit.forEach(el => {
+          if (el === 'a' || el === 'e' || el === 'u' || el === 'o') {
+            hilih += 'i'
+          } else {
+            hilih += el
+          }
+        })
+        result.value = hilih
+      }
+    }
+
+    const copyToClipboard = () => {
+      const result = document.getElementById('result');
+      if (result.value === '') {
+        alert('Nothing to copy! ')
+      } else {
+        result.select()
+        result.setSelectionRange(0, 99999);
+        document.execCommand('copy');
+                const btn = document.getElementById('copy')
+                btn.className = "btn btn-success"
+                btn.innerText = 'Copied!';
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <div class="container text-center">
+  <div class="container mt-3 text-center">
     <h5>Hilih Generator</h5>
     <input type="text" name="" id="halah" placeholder="Masukkan kalimat yang akan di generate" class="form-control" />
     <br />
@@ -56,9 +56,9 @@
         result.select()
         result.setSelectionRange(0, 99999);
         document.execCommand('copy');
-                const btn = document.getElementById('copy')
-                btn.className = "btn btn-success"
-                btn.innerText = 'Copied!';
+        const btn = document.getElementById('copy')
+        btn.className = "btn btn-success"
+        btn.innerText = 'Copied!';
       }
     }
   </script>

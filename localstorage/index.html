@@ -49,22 +49,28 @@
     urname.hide()
     fixKenalan.hide()
     btnForgetMe.hide()
-    
+
     btnHayuk.click(() => hayuk())
     fixKenalan.click(() => kenalan())
     btnForgetMe.click(() => forgetMe())
-    
+
     const load = () => {
       const name = localStorage.getItem("name")
       //localStorage.removeItem("name")
       if (name) {
-        emoji.attr("src", "https://pixabay.com/id/images/download/wink-1611815_640.png")
-        message.text("Selamat datang kembali " + name + ", semoga sehat selalu ya!")
+        console.log(name)
+        if (name.includes("Yulia")) {
+          emoji.attr("src", "https://pixabay.com/get/57e6d04a4851a914f1dc8460da2932761c37dbec5a5277_640.png")
+          message.text("Wah, jadi nama kamu " + name + "? , kamu tau gak, nama kamu termasuk daftar nama spesial di sistemku lho. Sehat-sehat terus yaa... :) ")
+        } else {
+          emoji.attr("src", "https://pixabay.com/id/images/download/wink-1611815_640.png")
+          message.text("Selamat datang kembali " + name + ", semoga sehat selalu ya!")
+        }
         
         btnHayuk.hide()
         urname.hide()
         fixKenalan.hide()
-        
+
         btnForgetMe.show()
         $("input").hide()
       } else {
@@ -92,23 +98,29 @@
       } else {
         const split1 = urname.val().split(" ")
         let newarr = []
-        split1.forEach(i=>{
-         const capitalize = i.replace(/^\w/, (c) => c.toUpperCase());
-         newarr.push(capitalize)
+        split1.forEach(i => {
+          const capitalize = i.replace(/^\w/, (c) => c.toUpperCase());
+          newarr.push(capitalize)
         })
         const newstr = newarr.join(" ")
-        localStorage.setItem("name", newstr) 
-        emoji.attr("src", "https://pixabay.com/id/images/download/wink-1611815_640.png")
-        message.text("Oke " + newstr + ", namamu akan selalu aku ingat di Browser ini, hehe")
+        localStorage.setItem("name", newstr)
+        if (newstr.includes("Yulia")) {
+          emoji.attr("src", "https://pixabay.com/get/57e6d04a4851a914f1dc8460da2932761c37dbec5a5277_640.png")
+          message.text("Wah, jadi nama kamu " + newstr + "? , kamu tau gak, nama kamu termasuk daftar nama spesial di sistemku lho... ")
+        } else {
+          emoji.attr("src", "https://pixabay.com/id/images/download/wink-1611815_640.png")
+          message.text("Oke " + newstr + ", namamu akan selalu aku ingat di Browser ini, hehe")
+
+        }
         $("button").hide()
         $("input").hide()
       }
     }
-    
+
     const forgetMe = () => {
       localStorage.removeItem("name");
       btnForgetMe.hide(300)
-      load() 
+      load()
     }
 
     load()

@@ -90,9 +90,17 @@
           message.text("Namaku Marzuki, siapa nama kamu?")
         }, 2000)
       } else {
-        localStorage.setItem("name", urname.val())
+        const split1 = urname.val().split(" ")
+        let newstr = ""
+        split1.forEach(i=>{
+         const capitalize = i.replace(/^\w/, (c) => c.toUpperCase());
+         newstr += capitalize
+         newstr += " "
+        })
+        
+        localStorage.setItem("name", newstr) 
         emoji.attr("src", "https://pixabay.com/id/images/download/wink-1611815_640.png")
-        message.text("Oke " + urname.val() + ", namamu akan selalu aku ingat di Browser ini, hehe")
+        message.text("Oke " + newstr + ", namamu akan selalu aku ingat di Browser ini, hehe")
         $("button").hide()
         $("input").hide()
       }

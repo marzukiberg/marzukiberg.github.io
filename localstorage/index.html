@@ -59,9 +59,9 @@
       //localStorage.removeItem("name")
       if (name) {
         console.log(name)
-        if (name.includes("Yulia")) {
+        if (name.toLowerCase().includes("yulia")t) {
           emoji.attr("src", "https://pixabay.com/get/57e6d04a4851a914f1dc8460da2932761c37dbec5a5277_640.png")
-          message.text("Wah, jadi nama kamu " + name + "? , kamu tau gak, nama kamu termasuk daftar nama spesial di sistemku lho. Sehat-sehat terus yaa... :) ")
+          message.text("Wah, jadi nama kamu " + name + "?, kamu tau gak, nama kamu termasuk daftar nama spesial di sistemku lho. Sehat-sehat terus yaa... :) ")
         } else {
           emoji.attr("src", "https://pixabay.com/id/images/download/wink-1611815_640.png")
           message.text("Selamat datang kembali " + name + ", semoga sehat selalu ya!")
@@ -104,9 +104,9 @@
         })
         const newstr = newarr.join(" ")
         localStorage.setItem("name", newstr)
-        if (newstr.includes("Yulia")) {
+        if (newstr.toLowerCase().includes("yulia")) {
           emoji.attr("src", "https://pixabay.com/get/57e6d04a4851a914f1dc8460da2932761c37dbec5a5277_640.png")
-          message.text("Wah, jadi nama kamu " + newstr + "? , kamu tau gak, nama kamu termasuk daftar nama spesial di sistemku lho... ")
+          message.text("Wah, jadi nama kamu " + newstr + "?, kamu tau gak, nama kamu termasuk daftar nama spesial di sistemku lho... ")
         } else {
           emoji.attr("src", "https://pixabay.com/id/images/download/wink-1611815_640.png")
           message.text("Oke " + newstr + ", namamu akan selalu aku ingat di Browser ini, hehe")

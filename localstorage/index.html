@@ -91,13 +91,12 @@
         }, 2000)
       } else {
         const split1 = urname.val().split(" ")
-        let newstr = ""
+        let newarr = []
         split1.forEach(i=>{
          const capitalize = i.replace(/^\w/, (c) => c.toUpperCase());
-         newstr += capitalize
-         newstr += " "
+         newarr.push(capitalize)
         })
-        
+        const newstr = newarr.join(" ")
         localStorage.setItem("name", newstr) 
         emoji.attr("src", "https://pixabay.com/id/images/download/wink-1611815_640.png")
         message.text("Oke " + newstr + ", namamu akan selalu aku ingat di Browser ini, hehe")
